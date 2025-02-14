@@ -1,0 +1,130 @@
+/* styles/Home.module.css */
+
+.heroSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .heroText {
+    flex: 1;
+    margin-right: 2rem;
+  }
+  
+  .heroText h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .heroButtons {
+    margin-top: 1.5rem;
+  }
+  
+  .ctaBtn {
+    background-color: var(--ivy-green);
+    color: var(--ivy-white);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    margin-right: 1rem;
+    border-radius: 4px;
+  }
+  
+  .secondaryBtn {
+    background-color: var(--ivy-white);
+    color: var(--ivy-green);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border: 2px solid var(--ivy-green);
+    border-radius: 4px;
+  }
+  
+  .heroAnimation {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  /* Basic styling for the entire band */
+  .logoBand {
+    padding: 2rem 0;
+    text-align: center;
+    overflow: hidden; /* Hide any overflow from the scroll track */
+    position: relative;
+    background: #f9f9f9; /* optional background color */
+  }
+
+  /* Scrolling container to house the animated track */
+  .scrollingContainer {
+    width: 100%;
+    overflow: hidden;
+    /* position: relative; // optional if you want custom positioning */
+  }
+
+  /* The track that moves horizontally */
+  .logoTrack {
+    display: flex;
+    /* Double the width to accommodate two sets of logos.
+      You can also use "white-space: nowrap" approach, 
+      but here's a straightforward approach. */
+    width: 200%;
+    animation: scroll 20s linear infinite; /* Speed & style of scroll */
+  }
+
+  /* Each logo item. 
+    They line up side by side because .logoTrack uses flex. */
+  .logoItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px; /* or whatever suits your logos */
+    padding: 0 2rem;  /* space between logos */
+  }
+
+  /* Keyframes for infinite scroll from left to right
+    (or right to left if you invert the direction). */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* Move the track 50% to the left so first half slides out
+        while second half slides in seamlessly. */
+      transform: translateX(-50%);
+    }
+  }
+
+  .logoContainer {
+    margin-top: 1rem;
+  }
+  
+  /* Steps section */
+  .stepsSection {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .stepsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  /* Services section */
+  .servicesSection {
+    padding: 2rem;
+  }
+  
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  

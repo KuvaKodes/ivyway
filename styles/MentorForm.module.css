@@ -1,0 +1,43 @@
+/* styles/MentorForm.module.css */
+
+.formContainer {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .mentorForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mentorForm label {
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+  
+  .mentorForm input,
+  .mentorForm textarea {
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .mentorForm button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--ivy-green);
+    color: var(--ivy-white);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  
+  .checkboxGroup label {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+  }
+  

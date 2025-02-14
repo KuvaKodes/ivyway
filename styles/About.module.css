@@ -1,0 +1,24 @@
+/* styles/About.module.css */
+.aboutContainer {
+    padding: 2rem;
+  }
+  
+  .teamGrid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+  
+  .teamCard {
+    text-align: center;
+  }
+  
+  .teamCard img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+  

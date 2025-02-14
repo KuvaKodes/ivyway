@@ -1,0 +1,41 @@
+/* styles/globals.css */
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* White */
+    color: #000;           /* Black */
+    font-family: libre-baskerville-regular;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Example color variables (adjust as needed) */
+  :root {
+    --ivy-green: #0b3d0b;
+    --ivy-white: #ffffff;
+    --ivy-black: #000000;
+  }
+  
+  /* Basic utility classes, etc. */
+  
