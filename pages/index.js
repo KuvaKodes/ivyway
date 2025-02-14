@@ -6,10 +6,12 @@ import styles from '../styles/Home.module.css';
 export default function Home() {
   // 1) Define an array of logos (paths in /public folder or external URLs)
   const logos = [
-    '/colleges/ColumbiaLogo.png',
+    '/colleges/MichiganLogo.png',
     '/colleges/HarvardLogo.png',
     '/colleges/GeorgetownLogo.png',
-    // ...
+    '/colleges/StanfordLogo.png',
+    '/colleges/DartmouthLogo.png',
+    '/colleges/BerkeleyLogo.png'
     // Add as many as you want
   ];
 
@@ -17,26 +19,91 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className={styles.heroSection}>
+        {/* 2) Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={styles.backgroundVideo}
+        >
+          <source src="/videos/test2HeroVideo.mp4" type="video/mp4" />
+          {/* Fallback text or other sources as needed */}
+        </video>
         <div className={styles.heroText}>
           <h1>IvyWay is the only way.</h1>
-          <p>
+          {/* <p>
             We connect students with mentors from top schools across the nation 
             to guide them through high school and the college application process.
-          </p>
+          </p> */}
           <div className={styles.heroButtons}>
             <a href="/join" className={styles.ctaBtn}>Sign Up</a>
             <a href="/about" className={styles.secondaryBtn}>Learn More</a>
           </div>
         </div>
+      </section>
 
-        {/* Example of an animated element */}
-        <div className={styles.heroAnimation}>
-          <AnimatedBox />
+
+      {/* New section for the big bold text (originally the <p> in heroText) */}
+      <section className={styles.introSection}>
+        <p className={styles.bigBoldText}>
+          We connect students with mentors from top schools across the nation 
+          to guide them through high school and the college application process.
+        </p>
+      </section>
+
+
+      {/* Services Section (Modified) */}
+      <section className={styles.servicesSection}>
+        <div className={styles.servicesGrid}>
+          {/* Card 1 */}
+          <div className={styles.serviceCard}>
+            <img
+              src="/icons/iconMentorship.png"
+              alt="Mentorship icon"
+              className={styles.cardIcon}
+            />
+            <h3>Mentorship</h3>
+            <p>Internships, research, resume building, and more.</p>
+          </div>
+
+          {/* Card 2 */}
+          <div className={styles.serviceCard}>
+            <img
+              src="/icons/iconTutoring.png"
+              alt="Tutoring icon"
+              className={styles.cardIcon}
+            />
+            <h3>Tutoring</h3>
+            <p>Help with challenging coursework from top-tier mentors.</p>
+          </div>
+
+          {/* Card 3 */}
+          <div className={styles.serviceCard}>
+            <img
+              src="/icons/iconEssay.png"
+              alt="Essay writing icon"
+              className={styles.cardIcon}
+            />
+            <h3>Essay Writing</h3>
+            <p>Support for the most critical part of college applications.</p>
+          </div>
+
+          {/* Card 4 */}
+          <div className={styles.serviceCard}>
+            <img
+              src="/icons/iconSAT.png"
+              alt="SAT/ACT icon"
+              className={styles.cardIcon}
+            />
+            <h3>SAT/ACT Prep</h3>
+            <p>Guidance to boost your standardized test scores.</p>
+          </div>
         </div>
       </section>
+
       {/* Logo Band Section */}
       <section className={styles.logoBand}>
-        <h2>Mentors from the best colleges</h2>
 
         {/* 2) Scrolling Container */}
         <div className={styles.scrollingContainer}>
@@ -48,9 +115,7 @@ export default function Home() {
                   src={logoSrc}
                   alt={`Logo ${idx + 1}`}
                   width={225}   // adjust as needed
-                  height={100}   // adjust as needed
-                  layout = "fixed"
-                  objectFit='contain'
+                  height={90}   // adjust as needed
                 />
               </div>
             ))}
@@ -59,10 +124,8 @@ export default function Home() {
                 <Image
                   src={logoSrc}
                   alt={`Logo copy ${idx + 1}`}
-                  width = {200}
-                  height = {80}
-                  layout = "fixed"
-                  objectFit='contain'
+                  width = {225}
+                  height = {90}
                 />
               </div>
             ))}
@@ -94,28 +157,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className={styles.servicesSection}>
-        <h2>Services for success</h2>
-        <div className={styles.servicesGrid}>
-          <div>
-            <h3>Mentorship</h3>
-            <p>Internships, research, resume building, and more.</p>
-          </div>
-          <div>
-            <h3>Tutoring</h3>
-            <p>Help with challenging coursework from top-tier mentors.</p>
-          </div>
-          <div>
-            <h3>Essay Writing</h3>
-            <p>Support for the most critical part of college applications.</p>
-          </div>
-          <div>
-            <h3>SAT/ACT Prep</h3>
-            <p>Guidance to boost your standardized test scores.</p>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 }

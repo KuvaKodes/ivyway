@@ -13,7 +13,7 @@
   justify-content: space-between;
 
   /* Start with white background */
-  background-color: var(--ivy-white);
+  background-color: var(--ivy-green);
   padding: 0.5rem 1rem;
 
   /* Add a smooth transition for hover effect */
@@ -22,23 +22,25 @@
 
 /* Hover: Make the navbar background ivy green */
 .navbar:hover {
-  background-color: var(--ivy-green);
+  background-color: var(--ivy-white);
 }
 
 
 /* Any logo image inside .navbar */
 .navbar img {
   transition: filter 0.3s; /* smooth effect on hover */
+  filter: brightness(0) invert(1);
+
 }
 
 /* On navbar hover, apply filter to make image white */
 .navbar:hover img {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 /* Links and text are green by default, turning white on hover */
 .links a {
-  color: var(--ivy-green);
+  color: var(--ivy-white);
   text-decoration: none;
   margin-left: 1rem;
   transition: color 0.3s;
@@ -47,14 +49,14 @@
 
 /* When navbar is hovered, invert link colors to white */
 .navbar:hover .links a {
-  color: var(--ivy-white);
+  color: var(--ivy-green);
 }
 
 /* Example “Join” button: Green background, white text initially */
 .joinBtn {
-  background-color: var(--ivy-green);
-  color: var(--ivy-white);
-  border: 2px solid var(--ivy-green);
+  background-color: var(--ivy-white);
+  color: var(--ivy-green);
+  border: 2px solid var(--ivy-white);
   padding: 0.5rem 1rem;
   margin-left: 0.5rem;
   cursor: pointer;
@@ -64,9 +66,9 @@
 
 /* On navbar hover, invert the button to white background and green text */
 .navbar:hover .joinBtn {
-  background-color: var(--ivy-white);
-  color: var(--ivy-green);
-  border: 2px solid var(--ivy-white);
+  background-color: var(--ivy-green);
+  color: var(--ivy-white);
+  border: 2px solid var(--ivy-green);
 }
 
 /* Optional: Add a hover effect just for the button itself, if you want it to stand out 

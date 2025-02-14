@@ -23,11 +23,11 @@ html, body {
     font-family: Arial, sans-serif;
     background-color: #fff; /* White */
     color: #000;           /* Black */
-    font-family: libre-baskerville-regular;
   }
   
   * {
     box-sizing: border-box;
+    font-family: libre-baskerville-regular;
   }
   
   /* Example color variables (adjust as needed) */

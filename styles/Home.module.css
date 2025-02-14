@@ -1,20 +1,42 @@
 /* styles/Home.module.css */
 
 .heroSection {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 2rem;
-  }
+  position: relative;     /* Allows absolutely positioned children */
+  height: 60vh;           /* Example height, adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;       /* Hide any video overflow */
+}
   
+
+  /* The video occupies the entire .heroSection, behind text */
+  .backgroundVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;            /* Place behind the text */
+  }
+
+/* Keep the hero text above the video */
   .heroText {
-    flex: 1;
-    margin-right: 2rem;
+    position: relative;     /* Stays on top of the video */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff;            /* White text to contrast the background video */
+    z-index: 1;
+    padding: 2rem;
+    
   }
-  
+    
   .heroText h1 {
-    font-size: 2rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
+    /* text-shadow: -1px 0 var(--ivy-green), 0 1px var(--ivy-green), 1px 0 var(--ivy-green), 0 -1px var(--ivy-green); */
   }
   
   .heroButtons {
@@ -38,14 +60,95 @@
     border: 2px solid var(--ivy-green);
     border-radius: 4px;
   }
-  
-  .heroAnimation {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    /* Arrow that overlaps the bottom of heroSection and top of next section */
+  .arrowContainer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: -20px; /* pull it up so it overlaps heroSection */
+    z-index: 2; /* place it above the video, but adjust if needed */
   }
-  
+
+    /* New section for the 'p' content that used to be in heroText */
+  .introSection {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .bigBoldText {
+    font-size: 2rem;
+    font-weight: bold;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--ivy-green);
+  }
+
+
+/* ====== SERVICES SECTION STYLING ====== */
+.servicesSection {
+  background: #ffffff;   /* White background for the section */
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+/* Title styling (optional) */
+.servicesSection h2 {
+  margin-bottom: 2rem;
+  font-size: 2em;
+}
+
+/* Title styling (optional) */
+.servicesSection h3, .servicesSection p {
+  color: var(--ivy-white);
+}
+
+/* 2x2 Grid for the cards */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 1.5rem; /* spacing between cards */
+  max-width: 1000px;
+  margin: 0 auto; /* center the grid */
+}
+
+/* Each card gets a mild shadow or border to 'pop out' */
+.serviceCard {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+/* A small icon at the top of each card */
+.cardIcon {
+  width: 50px; /* adjust icon size as needed */
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+/* Diagonal color logic:
+   - Card 1 (nth-child(1)) and Card 4 (nth-child(4)) share the same color 
+   - Card 2 (nth-child(2)) and Card 3 (nth-child(3)) share a different color
+*/
+
+/* Example two shades of green:
+   Feel free to pick your brand's exact color codes
+*/
+.serviceCard:nth-child(1),
+.serviceCard:nth-child(4) {
+  background-color: #78b369; /* a light ivy green shade */
+}
+
+.serviceCard:nth-child(2),
+.serviceCard:nth-child(3) {
+  background-color: #547d49; /* a slightly lighter or different green shade */
+}
 
   /* Basic styling for the entire band */
   .logoBand {
@@ -53,13 +156,12 @@
     text-align: center;
     overflow: hidden; /* Hide any overflow from the scroll track */
     position: relative;
-    background: #f9f9f9; /* optional background color */
   }
 
   /* Scrolling container to house the animated track */
   .scrollingContainer {
-    width: 100%;
     overflow: hidden;
+    white-space: nowrap;
     /* position: relative; // optional if you want custom positioning */
   }
 
@@ -69,30 +171,31 @@
     /* Double the width to accommodate two sets of logos.
       You can also use "white-space: nowrap" approach, 
       but here's a straightforward approach. */
-    width: 200%;
-    animation: scroll 20s linear infinite; /* Speed & style of scroll */
+    animation: scroll 12s linear infinite; /* Speed & style of scroll */
   }
 
   /* Each logo item. 
     They line up side by side because .logoTrack uses flex. */
-  .logoItem {
+  .logoItem img{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 150px; /* or whatever suits your logos */
+    object-fit: contain;
+     /* or whatever suits your logos */
     padding: 0 2rem;  /* space between logos */
   }
+
 
   /* Keyframes for infinite scroll from left to right
     (or right to left if you invert the direction). */
   @keyframes scroll {
-    0% {
+    from {
       transform: translateX(0);
     }
-    100% {
+    to {
       /* Move the track 50% to the left so first half slides out
         while second half slides in seamlessly. */
-      transform: translateX(-50%);
+      transform: translateX(-100%);
     }
   }
 
@@ -109,19 +212,6 @@
   .stepsGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-  }
-  
-  /* Services section */
-  .servicesSection {
-    padding: 2rem;
-  }
-  
-  .servicesGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
     text-align: center;
