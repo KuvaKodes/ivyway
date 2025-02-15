@@ -58,45 +58,55 @@ export default function Home() {
         <div className={styles.servicesGrid}>
           {/* Card 1 */}
           <div className={styles.serviceCard}>
-            <img
-              src="/icons/iconMentorship.png"
-              alt="Mentorship icon"
-              className={styles.cardIcon}
-            />
-            <h3>Mentorship</h3>
+            <div className={styles.serviceCardTopHalf}>
+              <img
+                src="/icons/mentoring_icon.png"
+                alt="Mentorship icon"
+                className={styles.cardIcon}
+              />
+              <h3>Mentorship</h3>
+            </div>
             <p>Internships, research, resume building, and more.</p>
           </div>
 
           {/* Card 2 */}
           <div className={styles.serviceCard}>
-            <img
-              src="/icons/iconTutoring.png"
-              alt="Tutoring icon"
-              className={styles.cardIcon}
-            />
-            <h3>Tutoring</h3>
+            <div className={styles.serviceCardTopHalf}>
+              <img
+                src="/icons/tutoring_icon.png"
+                alt="Tutoring icon"
+                className={styles.cardIcon}
+              />
+              <h3>Tutoring</h3>
+            </div>
             <p>Help with challenging coursework from top-tier mentors.</p>
           </div>
 
           {/* Card 3 */}
           <div className={styles.serviceCard}>
-            <img
-              src="/icons/iconEssay.png"
-              alt="Essay writing icon"
-              className={styles.cardIcon}
-            />
-            <h3>Essay Writing</h3>
-            <p>Support for the most critical part of college applications.</p>
+            <div className={styles.serviceCardTopHalf}>
+              <img
+                src="/icons/essay_icon.png"
+                alt="Essay writing icon"
+                className={styles.cardIcon}
+              />
+              <h3>Essay Writing</h3>
+            </div>
+            <div className={styles.serviceCardBottomHalf}>
+              <p>Support for the most critical part of college applications.</p>
+            </div>
           </div>
 
           {/* Card 4 */}
           <div className={styles.serviceCard}>
-            <img
-              src="/icons/iconSAT.png"
-              alt="SAT/ACT icon"
-              className={styles.cardIcon}
-            />
-            <h3>SAT/ACT Prep</h3>
+            <div className={styles.serviceCardTopHalf}>
+              <img
+                src="/icons/SAT_icon.png"
+                alt="SAT/ACT icon"
+                className={styles.cardIcon}
+              />
+              <h3>SAT/ACT Prep</h3>
+            </div>
             <p>Guidance to boost your standardized test scores.</p>
           </div>
         </div>
@@ -114,8 +124,8 @@ export default function Home() {
                 <Image
                   src={logoSrc}
                   alt={`Logo ${idx + 1}`}
-                  width={225}   // adjust as needed
-                  height={90}   // adjust as needed
+                  width={410}   // adjust as needed
+                  height={150}   // adjust as needed
                 />
               </div>
             ))}
@@ -124,8 +134,8 @@ export default function Home() {
                 <Image
                   src={logoSrc}
                   alt={`Logo copy ${idx + 1}`}
-                  width = {225}
-                  height = {90}
+                  width = {410}
+                  height = {150}
                 />
               </div>
             ))}

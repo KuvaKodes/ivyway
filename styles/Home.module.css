@@ -89,17 +89,9 @@
 /* ====== SERVICES SECTION STYLING ====== */
 .servicesSection {
   background: #ffffff;   /* White background for the section */
-  padding: 3rem 1rem;
   text-align: center;
 }
 
-/* Title styling (optional) */
-.servicesSection h2 {
-  margin-bottom: 2rem;
-  font-size: 2em;
-}
-
-/* Title styling (optional) */
 .servicesSection h3, .servicesSection p {
   color: var(--ivy-white);
 }
@@ -109,50 +101,69 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
   gap: 1.5rem; /* spacing between cards */
-  max-width: 1000px;
+  max-width: 95%;
   margin: 0 auto; /* center the grid */
 }
 
 /* Each card gets a mild shadow or border to 'pop out' */
 .serviceCard {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+ /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+  border-radius: 12px;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #333;
+  font-size: 1.25rem;
+}
+
+/* Hover to expand (scale) and stronger shadow */
+.serviceCard:hover {
+  transform: scale(1.10);
+
+}
+
+.serviceCardTopHalf{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
 }
 
 /* A small icon at the top of each card */
 .cardIcon {
-  width: 50px; /* adjust icon size as needed */
-  height: 50px;
+  width: 100px; /* adjust icon size as needed */
+  height: 100px;
   margin-bottom: 1rem;
+  margin-right: 1rem;
+  filter: brightness(0) invert(1);
+
 }
 
-/* Diagonal color logic:
-   - Card 1 (nth-child(1)) and Card 4 (nth-child(4)) share the same color 
-   - Card 2 (nth-child(2)) and Card 3 (nth-child(3)) share a different color
-*/
+  /* Diagonal color logic:
+    - Card 1 (nth-child(1)) and Card 4 (nth-child(4)) share the same color 
+    - Card 2 (nth-child(2)) and Card 3 (nth-child(3)) share a different color
+  */
 
-/* Example two shades of green:
-   Feel free to pick your brand's exact color codes
-*/
-.serviceCard:nth-child(1),
-.serviceCard:nth-child(4) {
-  background-color: #78b369; /* a light ivy green shade */
-}
+  /* Example two shades of green:
+    Feel free to pick your brand's exact color codes
+  */
+  .serviceCard:nth-child(1),
+  .serviceCard:nth-child(4) {
+    background-color: #78b369; /* a light ivy green shade */
+  }
 
-.serviceCard:nth-child(2),
-.serviceCard:nth-child(3) {
-  background-color: #547d49; /* a slightly lighter or different green shade */
-}
+  .serviceCard:nth-child(2),
+  .serviceCard:nth-child(3) {
+    background-color: #547d49; /* a slightly lighter or different green shade */
+  }
 
   /* Basic styling for the entire band */
   .logoBand {
-    padding: 2rem 0;
+    padding: 3rem 0;
     text-align: center;
     overflow: hidden; /* Hide any overflow from the scroll track */
     position: relative;
