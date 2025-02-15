@@ -1,7 +1,8 @@
 import Layout from '../components/Layout';
 import Image from 'next/image';
-import AnimatedBox from '../components/AnimatedBox'; // Our "complicated" element
 import styles from '../styles/Home.module.css';
+import StepsSection from '../components/StepsSection'
+import CardsCarousel from '../components/CardsCarousel';
 
 export default function Home() {
   // 1) Define an array of logos (paths in /public folder or external URLs)
@@ -143,8 +144,9 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* Steps / Process Section */}
+      <CardsCarousel />
+      {/* <StepsSection /> */}
+      {/*{/* Steps / Process Section }
       <section className={styles.stepsSection}>
         <h2>Mentoring made easy.</h2>
         <div className={styles.stepsGrid}>
@@ -165,7 +167,8 @@ export default function Home() {
             <p>Leverage mentorship and resources to achieve your dreams.</p>
           </div>
         </div>
-      </section>
+      </section> */}
+
 
     </Layout>
   );

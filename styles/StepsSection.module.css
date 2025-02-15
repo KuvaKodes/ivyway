@@ -1,0 +1,70 @@
+.scrollySection {
+    /* Make this section tall enough so the user 
+       experiences the pinned effect. 
+       We'll do something like 200vh (2 screen heights) 
+       or more if you have many steps. */
+    min-height: 200vh;
+    position: relative;
+  }
+  
+  /* The child that remains pinned in full view while you scroll inside it */
+  .scrollyInner {
+    /* Sticks to the top of the viewport while within .scrollySection */
+    position: sticky;
+    top: 0;
+  
+    /* Occupies full viewport height */
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* LEFT COLUMN (pinned image) */
+  .leftColumn {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden; /* Ensure the image won't overflow */
+  }
+  
+  /* If you use <Image fill>, you need position: relative on parent,
+     plus the style prop in your code for objectFit, etc. */
+  
+  /* RIGHT COLUMN (scrollable steps) */
+  .rightColumn {
+    width: 50%;
+    height: 100%; 
+    /* We'll let the steps themselves handle the scrolly part */
+    overflow: hidden; /* no default scroll here; see next wrapper */
+    background-color: #0b3d0b; /* optional brand background or your color */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* The wrapper that actually scrolls internally */
+  .stepsWrapper {
+    /* Potentially much taller than 100% if you have many steps 
+       so there's something to scroll through. */
+    height: 200%;
+    padding: 2rem;
+    overflow-y: scroll;
+    box-sizing: border-box;
+  }
+  
+  /* Each step styling */
+  .step {
+    margin-bottom: 2rem;
+  }
+  
+  .step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  
+  .step p {
+    font-size: 1rem;
+    color: #f0f0f0;
+  }
+  

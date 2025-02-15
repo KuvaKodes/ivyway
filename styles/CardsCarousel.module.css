@@ -1,0 +1,89 @@
+.carouselContainer {
+    /* Taller container, e.g., full view height or any large value */
+    height: 60vh; /* or 100vh, adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 2rem auto;
+    width: 100%;
+  }
+  
+  .navButton {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 1rem;
+    z-index: 10;
+  }
+  
+  /* The visible "viewport" that hides overflow */
+  .carouselViewport {
+    width: 100%;
+    overflow: hidden;
+    height: 100%
+  }
+  
+  /* The track that is horizontally moved via transform */
+  .carouselTrack {
+    display: flex;
+    align-items: center;
+    transition: transform 0.4s ease;
+    height:100%
+  }
+  
+  /* Each card is 60vw wide so partial next/prev are visible. 
+     If your container is narrower than 60vw, you still see the partial next card. */
+  .card {
+    flex: 0 0 30vw;
+    margin: 0 1rem; /* small horizontal spacing */
+    background: #ebfcec;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+    width: 200px;
+    height: 90%;
+
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
+  
+  /* Image container (e.g. 200px tall) 
+     Adjust as needed or match container height
+  */
+  .cardImage {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+  }
+  
+  .cardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  
+  .cardContent {
+    padding: 1rem;
+    color: var(--ivy-green)
+  }
+
+  .cardContentTopHalf{
+    display: flex;
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+  
+  .numberIcon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 0.5rem;
+    margin-right: 0.75rem;
+  }
+  
